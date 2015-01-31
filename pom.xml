@@ -8,6 +8,10 @@
 	<name>artigo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+		<deltaspike.version>1.2.1</deltaspike.version>
+	</properties>
+
 	<dependencies>
 
 		<dependency>
@@ -28,6 +32,21 @@
 			<version>2.2.0.Final</version>
 		</dependency>
 
+		<!-- deltaspike -->
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-api</artifactId>
+			<version>${deltaspike.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-impl</artifactId>
+			<version>${deltaspike.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
