@@ -32,6 +32,13 @@
 			<version>2.2.0.Final</version>
 		</dependency>
 
+		<!-- weld for java se -->
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-se</artifactId>
+			<version>1.0.1-Final</version>
+		</dependency>
+
 		<!-- deltaspike -->
 		<dependency>
 			<groupId>org.apache.deltaspike.core</groupId>
