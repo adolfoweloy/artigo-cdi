@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 import br.com.javamagazine.extension.CountryExpressionInterpreter;
 import br.com.javamagazine.extension.Include;
 
-@Include(onExpression = "VE", interpretedBy = CountryExpressionInterpreter.class)
-public class PagamentoVenezuela implements Pagamento {
+@Include(onExpression = "AR", interpretedBy = CountryExpressionInterpreter.class)
+public class PagamentoArgentina implements Pagamento {
 
 	@Override
 	public BigDecimal calcularTaxaImposto(BigDecimal valorPagamento) {
-		return new BigDecimal("2.75");
+		return new BigDecimal("4.75");
 	}
 
 	@Override
