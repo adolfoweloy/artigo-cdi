@@ -2,6 +2,10 @@ package br.com.javamagazine.pagamento;
 
 import java.math.BigDecimal;
 
+import br.com.javamagazine.extension.CountryExpressionInterpreter;
+import br.com.javamagazine.extension.Include;
+
+@Include(onExpression = "BR", interpretedBy = CountryExpressionInterpreter.class)
 public class PagamentoBrasil implements Pagamento {
 
 	@Override
@@ -15,5 +19,5 @@ public class PagamentoBrasil implements Pagamento {
 		BigDecimal pagamento = valorPagamento.multiply(taxaImposto).add(valorPagamento);
 		System.out.println(pagamento.toPlainString());
 	}
-	
+
 }
