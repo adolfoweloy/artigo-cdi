@@ -33,6 +33,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>2.2.0.Final</version>
@@ -52,7 +58,7 @@
 			<version>${deltaspike.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
