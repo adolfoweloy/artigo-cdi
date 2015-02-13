@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.javamagazine.pagamento.Pagamento;
 
-@WebServlet("/index")
-public class IndexServlet extends HttpServlet {
+@WebServlet("/sampleIndex")
+public class SampleIndexServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class IndexServlet extends HttpServlet {
 	@Inject @Any
 	private Pagamento pagamento;
 
-	public IndexServlet() {
+	public SampleIndexServlet() {
 	}
 
 	@Override
