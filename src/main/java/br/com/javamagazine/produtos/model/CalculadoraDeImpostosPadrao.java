@@ -2,17 +2,27 @@ package br.com.javamagazine.produtos.model;
 
 import java.math.BigDecimal;
 
+import javax.inject.Inject;
+
 import br.com.javamagazine.region.Region;
 import br.com.javamagazine.region.ServerWebServiceClient;
 
-public class CalculadoraDeImpostosPadrao {
+public class CalculadoraDeImpostosPadrao implements CalculadoraDeImpostos {
   
   private ServerWebServiceClient swsClient;
   
+  @Deprecated
+  public CalculadoraDeImpostosPadrao() { }
+  
+  @Inject
   public CalculadoraDeImpostosPadrao (ServerWebServiceClient swsClient) {
     this.swsClient = swsClient;
   }
   
+  /* (non-Javadoc)
+   * @see br.com.javamagazine.produtos.model.CalculadoraDeImpostos#calcular(java.math.BigDecimal)
+   */
+  @Override
   public BigDecimal calcular(BigDecimal valorTotal) {
     Region region = swsClient.getBucketLocation();
     

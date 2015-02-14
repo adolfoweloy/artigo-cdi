@@ -11,7 +11,7 @@ public class Pedido {
     livros.add(livro);
   }
 
-  public Fatura gerarFatura(CalculadoraDeImpostosPadrao calculadora) {
+  public Fatura gerarFatura(CalculadoraDeImpostos calculadora) {
     BigDecimal valorTotal = BigDecimal.ZERO;
     
     for (Livro livro : livros) {
