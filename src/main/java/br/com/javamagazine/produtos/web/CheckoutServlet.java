@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.javamagazine.produtos.model.CalculadoraDeImpostos;
+import br.com.javamagazine.produtos.model.CalculadoraDeImpostosPadrao;
 import br.com.javamagazine.produtos.model.Fatura;
 import br.com.javamagazine.produtos.model.Pedido;
 import br.com.javamagazine.produtos.model.RepositorioDeLivros;
@@ -27,7 +27,7 @@ public class CheckoutServlet extends HttpServlet {
       throws ServletException, IOException {
     
     String[] ids = request.getParameterValues("livro");
-    CalculadoraDeImpostos calculadora = new CalculadoraDeImpostos(new ServerWebServiceClient());
+    CalculadoraDeImpostosPadrao calculadora = new CalculadoraDeImpostosPadrao(new ServerWebServiceClient());
     Pedido pedido = new Pedido();
     
     for (String idLivroSelecionado : ids) {

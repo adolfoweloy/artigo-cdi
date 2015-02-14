@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 import br.com.javamagazine.region.Region;
 import br.com.javamagazine.region.ServerWebServiceClient;
 
-public class CalculadoraDeImpostos {
+public class CalculadoraDeImpostosPadrao {
   
   private ServerWebServiceClient swsClient;
   
-  public CalculadoraDeImpostos (ServerWebServiceClient swsClient) {
+  public CalculadoraDeImpostosPadrao (ServerWebServiceClient swsClient) {
     this.swsClient = swsClient;
   }
   
