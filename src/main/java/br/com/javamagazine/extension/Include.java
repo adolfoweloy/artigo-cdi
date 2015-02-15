@@ -9,13 +9,15 @@ import java.lang.annotation.Target;
 
 import javax.inject.Qualifier;
 
+import br.com.javamagazine.region.Region;
+
 @Retention(RetentionPolicy.RUNTIME)
 @Target({FIELD, TYPE})
 @Qualifier
 public @interface Include {
 
-	String onExpression();
+	Region onExpression();
 
-	Class<? extends CountryExpressionInterpreter> interpretedBy();
+	Class<? extends ExpressionInterpreter<Region, Boolean>> interpretedBy();
 
 }
