@@ -7,15 +7,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import javax.inject.Qualifier;
+import br.com.javamagazine.region.Region;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({FIELD, TYPE})
-@Qualifier
-public @interface Include {
+public @interface IncludeRegion {
 
-	String onExpression();
+	Region onExpression();
 
-	Class<? extends CountryExpressionInterpreter> interpretedBy();
+	Class<? extends RegionExpressionInterpreter> interpretedBy();
 
 }
