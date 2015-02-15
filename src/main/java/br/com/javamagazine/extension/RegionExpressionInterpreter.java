@@ -3,9 +3,8 @@ package br.com.javamagazine.extension;
 import br.com.javamagazine.region.Region;
 import br.com.javamagazine.region.ServerWebServiceClient;
 
-public class RegionExpressionInterpreter implements ExpressionInterpreter<Region, Boolean> { 
+public class RegionExpressionInterpreter { 
 
-  @Override
   public Boolean interpret(Region expression) {
     
     ServerWebServiceClient swsClient = new ServerWebServiceClient();

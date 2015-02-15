@@ -13,11 +13,11 @@ public class RegionExtension implements Extension {
   public void loadClassesToBeIncludedByCDI(@Observes ProcessAnnotatedType pat) {
       AnnotatedType at = pat.getAnnotatedType();
 
-      boolean isIncludeAnnotationPresent = at.isAnnotationPresent(Include.class);
+      boolean isIncludeAnnotationPresent = at.isAnnotationPresent(IncludeRegion.class);
 
       // verifica se o bean sendo analisado possui a anotação @Include
       if (isIncludeAnnotationPresent) {
-          Include annotation = at.getAnnotation(Include.class);
+          IncludeRegion annotation = at.getAnnotation(IncludeRegion.class);
           Region expression = annotation.onExpression();
 
           // interpreta a expressão definida como metadados da anotação @Include

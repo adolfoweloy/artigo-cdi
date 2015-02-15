@@ -11,10 +11,10 @@ import br.com.javamagazine.region.Region;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({FIELD, TYPE})
-public @interface Include {
+public @interface IncludeRegion {
 
 	Region onExpression();
 
-	Class<? extends ExpressionInterpreter<Region, Boolean>> interpretedBy();
+	Class<? extends RegionExpressionInterpreter> interpretedBy();
 
 }
