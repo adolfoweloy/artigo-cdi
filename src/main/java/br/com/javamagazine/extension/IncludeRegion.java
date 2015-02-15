@@ -15,6 +15,4 @@ public @interface IncludeRegion {
 
 	Region onExpression();
 
-	Class<? extends RegionExpressionInterpreter> interpretedBy();
-
 }
