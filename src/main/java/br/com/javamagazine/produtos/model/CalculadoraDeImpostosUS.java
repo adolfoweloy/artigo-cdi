@@ -3,12 +3,9 @@ package br.com.javamagazine.produtos.model;
 import java.math.BigDecimal;
 
 import br.com.javamagazine.extension.IncludeRegion;
-import br.com.javamagazine.extension.RegionExpressionInterpreter;
 import br.com.javamagazine.region.Region;
 
-@IncludeRegion(
-    onExpression=Region.US_West,
-    interpretedBy=RegionExpressionInterpreter.class)
+@IncludeRegion(onExpression=Region.US_West)
 public class CalculadoraDeImpostosUS implements CalculadoraDeImpostos {
 
   @Override
