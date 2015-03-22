@@ -2,7 +2,6 @@ package br.com.javamagazine.produtos.web;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,11 +20,7 @@ import br.com.javamagazine.produtos.model.RepositorioDeLivros;
 public class CheckoutServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  @Inject
-  private RepositorioDeLivros repositorio;
-  
-  @Inject
-  private CalculadoraDeImpostos calculadora;
+  private RepositorioDeLivros repositorio = new RepositorioDeLivros();
   
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
@@ -43,7 +38,7 @@ public class CheckoutServlet extends HttpServlet {
       
     }
 
-    Fatura fatura = pedido.gerarFatura(calculadora);
+    Fatura fatura = pedido.gerarFatura(new CalculadoraDeImpostos());
     
     request.setAttribute("fatura", fatura);
     request.getRequestDispatcher("/fatura.jsp").forward(request, response);
