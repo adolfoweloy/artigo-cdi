@@ -15,7 +15,9 @@ public class RepositorioDeLivros {
     livros.add(new Livro(3, "OCM Java EE 6", new BigDecimal("158.27")));
 
   }
-    
+  
+  public RepositorioDeLivros() {}
+  
   public List<Livro> todosLivros() {
     return livros;
   }

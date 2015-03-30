@@ -13,7 +13,7 @@
 	<form action="<c:url value='/checkout'/>" method="post">
 		<ul>
 			<c:forEach items="${livros}" var="livro">
-				<li><input type="radio" name="livro" value="${livro.id}">${livro.nome}
+				<li><input type="checkbox" name="livro" value="${livro.id}">${livro.nome}
 					- ${livro.preco}</li>
 			</c:forEach>
 		</ul>
