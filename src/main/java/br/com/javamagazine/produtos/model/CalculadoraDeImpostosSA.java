@@ -2,9 +2,10 @@ package br.com.javamagazine.produtos.model;
 
 import java.math.BigDecimal;
 
-import javax.enterprise.inject.Alternative;
+import br.com.javamagazine.extension.IncludeRegion;
+import br.com.javamagazine.region.Region;
 
-@Alternative
+@IncludeRegion(Region.SA_SaoPaulo)
 public class CalculadoraDeImpostosSA implements CalculadoraDeImpostos {
 
     @Override

@@ -17,16 +17,15 @@ public class RegionExtension implements Extension {
         // verifica se o bean sendo analisado possui a anotação @IncludeRegion
         if (isIncludeAnnotationPresent) {
             IncludeRegion annotation = annotatedType.getAnnotation(IncludeRegion.class);
-            Region expression = annotation.onExpression();
+            Region region = annotation.value();
             
-            // interpreta a expressao definida como metadados na anotação @IncludeRegion
-            RegionExpressionInterpreter interpreter = new RegionExpressionInterpreter();
-            boolean expressionInterpreted = interpreter.interpret(expression);
+            // validador da região indicada na anotação @IncludeRegion
+            RegionValidator validator = new RegionValidator();
             
-            // caso a expressão seja interpretada como inválida o bean passa a ser @Vetoed
-            // dessa forma o bean não é adicionado no contexto 
+            // caso a região do bean sendo analisado não for suportada o mesmo 
+            // deve ser @Vetoed. Assim o bean não é adicionado no contexto 
             // CDI e não fica disponivel para injeção
-            if (!expressionInterpreted) {
+            if (validator.unsupported(region)) {
                 pat.veto();
             }
         }
