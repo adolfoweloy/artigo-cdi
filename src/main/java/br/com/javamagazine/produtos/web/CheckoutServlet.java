@@ -33,7 +33,7 @@ public class CheckoutServlet extends HttpServlet {
       try {
         pedido.adicionar(repositorio.getLivro(idLivroSelecionado));
       } catch (Exception e) {
-        System.out.println("Enviado um livro que não existe no banco de dados");
+        System.out.println("Enviado um livro que nao existe no banco de dados");
       }
       
     }
